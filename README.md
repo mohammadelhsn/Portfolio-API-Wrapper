@@ -1,1 +1,164 @@
 # Portfolio API Wrapper
+
+A TypeScript API wrapper I made for accessing my portfolio data easily and efficiently.
+
+## Stack
+
+![Yarn](https://go-skill-icons.vercel.app/api/icons?i=yarn)
+![NPM](https://go-skill-icons.vercel.app/api/icons?i=npm)
+![Node](https://go-skill-icons.vercel.app/api/icons?i=nodejs)
+![TypeScript](https://go-skill-icons.vercel.app/api/icons?i=ts)
+![Axios](https://go-skill-icons.vercel.app/api/icons?i=axios)
+
+## Installation
+
+### NPM
+
+```bash
+npm i @mohammadelhsn/portfolio-api-wrapper
+```
+
+### Yarn
+
+```bash
+yarn add @mohammadelhsn/portfolio-api-wrapper
+```
+
+## Types
+
+### Opts<T>
+
+```ts
+interface Opts<T> {
+	/** @description Whether the request was successful */
+	success: boolean;
+	/** @description The status of the request */
+	status: number | null;
+	/** @description The message of the status */
+	statusMessage: string | null;
+	/** @description The data */
+	data?: T;
+}
+```
+
+### TaskData
+
+```ts
+interface TaskData {
+	/** @description The name of the task */
+	name: string;
+	/** @description The ID of the strong (e.g. t01) */
+	id: string;
+	/** @description The description for the task */
+	description: string;
+	/** @description List of goals or objectives */
+	objectives: string[];
+	/** @description Example output or result, as a string */
+	sampleOutput: string;
+	/** @description Skills or tech demonstrated, e.g. ["Python", "Multiline Strings"] */
+	skills: string[];
+}
+```
+
+## API Methods
+
+### `getAssignment(assignmentId?: string, taskId?: string): Promise<Opts<TaskData> | Opts<AssessmentDataType> | Opts<AssessmentDataType[]> | undefined>`
+
+Fetch assignment data.
+
+- **Without parameters:** returns all assignments.
+- **With `assignmentId`:** returns the specific assignment data.
+- **With `assignmentId` and `taskId`:** returns the specific task within that assignment.
+
+---
+
+### `getLab(labId?: string, taskId?: string): Promise<any>`
+
+Fetch lab data.
+
+- **Without parameters:** returns all labs.
+- **With `labId`:** returns the specific lab data.
+- **With `labId` and `taskId`:** returns the specific task within that lab.
+
+---
+
+### `getExamples(): Promise<any>`
+
+Fetch example data for the course or project.
+
+---
+
+### `getPageData(): Promise<any>`
+
+Fetch page-related metadata or content.
+
+---
+
+### `getTechData(): any`
+
+Get technology stack data. This method is synchronous.
+
+---
+
+### `getTopicsData(): any`
+
+Get course or project topics data. This method is synchronous.
+
+## Usage
+
+```ts
+import API from '@mohammadelhsn/portfolio-api-wrapper'; // adjust path
+
+// Define which project you want to get data for
+const api = new API('COURSE');
+
+async function Test() {
+	// Fetches all the assignments data for the course
+	const allAssignments = await api.getAssignment();
+	console.log(allAssignments);
+
+	// Fetch a specific assignments data
+	const assignment01 = await api.getAssignment('01');
+	console.log(assignment01);
+
+	// Fetch a specific task of an assignment
+	const task04Assignment01 = await api.getAssignment('01', '04');
+	console.log(task04Assignment01);
+
+	// Fetches all the lab data for the course
+	const allLabs = await api.getLab();
+	console.log(allLabs);
+
+	// Fetch a specific lab for a course
+	const lab01 = await api.getLab('01');
+	console.log(lab01);
+
+	// Fetch a specific task for a course
+	const task01lab01 = await api.getLab('01', '01');
+	console.log(task01lab01);
+
+	// Fetch the examples data for the course
+	const exampleData = await api.getExamples();
+	console.log(exampleData);
+
+	// Get the page data for the course
+	const pageData = await api.getPageData();
+	console.log(pageData);
+
+	// Get the tech data for the course
+	const techData = api.getTechData();
+	console.log(techData);
+
+	// Get the topics data for the course
+	const topicsData = api.getTopicsData();
+	console.log(topicsData);
+}
+
+// Call the function to test the code
+
+Test();
+```
+
+## View on NPM
+
+<a href="https://www.npmjs.com/package/@mohammadelhsn/portfolio-api-wrapper"><img src="https://go-skill-icons.vercel.app/api/icons?i=npm" /></a>

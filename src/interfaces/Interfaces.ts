@@ -38,12 +38,18 @@ export interface ExampleData {
 }
 
 export interface TaskData {
+	/** @description The name of the task */
 	name: string;
-	id: string; // id: t{num}
+	/** @description The ID of the strong (e.g. t01) */
+	id: string;
+	/** @description The description for the task */
 	description: string;
-	objectives: string[]; // list of goals or objectives
-	sampleOutput: string; // example output or result, as a string
-	skills: string[]; // skills or tech demonstrated, e.g. ["Python", "Multiline Strings"]
+	/** @description List of goals or objectives */
+	objectives: string[];
+	/** @description Example output or result, as a string */
+	sampleOutput: string;
+	/** @description Skills or tech demonstrated, e.g. ["Python", "Multiline Strings"] */
+	skills: string[];
 }
 
 export interface ConstantsData {
