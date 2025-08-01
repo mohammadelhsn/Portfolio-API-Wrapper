@@ -96,3 +96,11 @@ export interface TopicOpts {
 	title: string;
 	items: string[];
 }
+
+export type Project =
+	| 'CP104'
+	| 'CP164'
+	| 'CP213'
+	| 'CP216'
+	| 'CP264'
+	| 'Projects';

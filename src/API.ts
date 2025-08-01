@@ -15,10 +15,8 @@ export class API {
 	course: Course;
 	assignsURL: string;
 	assignURL: string;
-	//	assignTaskURL: string;
 	labsURL: string;
 	labURL: string;
-	//	labTaskURL: string;
 	exampleURL: string;
 	pageDataURL: string;
 	techDataURL: string;
