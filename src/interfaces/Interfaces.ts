@@ -69,10 +69,15 @@ export interface FunctionPageProps {
 	parent: string;
 }
 export interface AssessmentDataType {
+	/** @description The name of the assessment */
 	name: string;
+	/** @description The ID of the assessment a01 / l01 */
 	id: string;
+	/** @description The task data for the assessment */
 	tasks: TaskData[];
+	/** @description The function data for the assessment  */
 	functions?: FunctionsData[];
+	/** @description The constants data for the assessment  */
 	constants?: ConstantsData[];
 }
 
@@ -86,9 +91,13 @@ export interface LabsAssignmentsOpts {
 }
 
 export interface Opts<T> {
+	/** @description Whether the request was successful */
 	success: boolean;
+	/** @description The status of the request */
 	status: number | null;
+	/** @description The message of the status */
 	statusMessage: string | null;
+	/** @description The data */
 	data?: T;
 }
 

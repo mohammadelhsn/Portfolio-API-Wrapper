@@ -10,6 +10,10 @@ A TypeScript API wrapper I made for accessing my portfolio data easily and effic
 ![TypeScript](https://go-skill-icons.vercel.app/api/icons?i=ts)
 ![Axios](https://go-skill-icons.vercel.app/api/icons?i=axios)
 
+## View on NPM
+
+<a href="https://www.npmjs.com/package/@mohammadelhsn/portfolio-api-wrapper"><img src="https://go-skill-icons.vercel.app/api/icons?i=npm" /></a>
+
 ## Installation
 
 ### NPM
@@ -26,6 +30,9 @@ yarn add @mohammadelhsn/portfolio-api-wrapper
 
 ## Types
 
+<details>
+<summary>Click to Show/Hide</summary>
+
 ### Opts<T>
 
 ```ts
@@ -41,26 +48,12 @@ interface Opts<T> {
 }
 ```
 
-### TaskData
-
-```ts
-interface TaskData {
-	/** @description The name of the task */
-	name: string;
-	/** @description The ID of the strong (e.g. t01) */
-	id: string;
-	/** @description The description for the task */
-	description: string;
-	/** @description List of goals or objectives */
-	objectives: string[];
-	/** @description Example output or result, as a string */
-	sampleOutput: string;
-	/** @description Skills or tech demonstrated, e.g. ["Python", "Multiline Strings"] */
-	skills: string[];
-}
-```
+</details>
 
 ## API Methods
+
+<details>
+<summary>Click to Show/Hide</summary>
 
 ### `getAssignment(assignmentId?: string, taskId?: string): Promise<Opts<TaskData> | Opts<AssessmentDataType> | Opts<AssessmentDataType[]> | undefined>`
 
@@ -104,7 +97,12 @@ Get technology stack data. This method is synchronous.
 
 Get course or project topics data. This method is synchronous.
 
+</details>
+
 ## Usage
+
+<details>
+<summary>Click to Show/Hide</summary>
 
 ```ts
 import API from '@mohammadelhsn/portfolio-api-wrapper'; // adjust path
@@ -159,6 +157,4 @@ async function Test() {
 Test();
 ```
 
-## View on NPM
-
-<a href="https://www.npmjs.com/package/@mohammadelhsn/portfolio-api-wrapper"><img src="https://go-skill-icons.vercel.app/api/icons?i=npm" /></a>
+</details>
