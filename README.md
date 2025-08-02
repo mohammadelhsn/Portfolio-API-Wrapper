@@ -165,3 +165,7 @@ Test();
 ```
 
 </details>
+
+## Status
+
+> 🔧 **Status: Actively Maintained** — this project is considered feature-complete but continues to receive updates & improvements.
