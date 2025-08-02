@@ -4,17 +4,22 @@ A TypeScript API wrapper I made for accessing my portfolio data easily and effic
 
 ## Stack
 
-![Yarn](https://go-skill-icons.vercel.app/api/icons?i=yarn)
-![NPM](https://go-skill-icons.vercel.app/api/icons?i=npm)
-![Node](https://go-skill-icons.vercel.app/api/icons?i=nodejs)
-![TypeScript](https://go-skill-icons.vercel.app/api/icons?i=ts)
-![Axios](https://go-skill-icons.vercel.app/api/icons?i=axios)
+| Technologies |                                                                 |
+| ------------ | --------------------------------------------------------------- |
+| Yarn         | ![Yarn](https://go-skill-icons.vercel.app/api/icons?i=yarn)     |
+| NPM          | ![NPM](https://go-skill-icons.vercel.app/api/icons?i=npm)       |
+| Node         | ![Node](https://go-skill-icons.vercel.app/api/icons?i=nodejs)   |
+| TypeScript   | ![TypeScript](https://go-skill-icons.vercel.app/api/icons?i=ts) |
+| Axios        | ![Axios](https://go-skill-icons.vercel.app/api/icons?i=axios)   |
 
 ## View on NPM
 
 <a href="https://www.npmjs.com/package/@mohammadelhsn/portfolio-api-wrapper"><img src="https://go-skill-icons.vercel.app/api/icons?i=npm" /></a>
 
 ## Installation
+
+<details>
+<summary>Click to show / hide</summary>
 
 ### NPM
 
@@ -28,10 +33,12 @@ npm i @mohammadelhsn/portfolio-api-wrapper
 yarn add @mohammadelhsn/portfolio-api-wrapper
 ```
 
+</details>
+
 ## Types
 
 <details>
-<summary>Click to Show/Hide</summary>
+<summary>Click to show / hide</summary>
 
 ### Opts<T>
 
@@ -53,7 +60,7 @@ interface Opts<T> {
 ## API Methods
 
 <details>
-<summary>Click to Show/Hide</summary>
+<summary>Click to show / hide</summary>
 
 ### `getAssignment(assignmentId?: string, taskId?: string): Promise<Opts<TaskData> | Opts<AssessmentDataType> | Opts<AssessmentDataType[]> | undefined>`
 
@@ -102,7 +109,7 @@ Get course or project topics data. This method is synchronous.
 ## Usage
 
 <details>
-<summary>Click to Show/Hide</summary>
+<summary>Click to show / hide</summary>
 
 ```ts
 import API from '@mohammadelhsn/portfolio-api-wrapper'; // adjust path
