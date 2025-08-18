@@ -18,9 +18,6 @@ A TypeScript API wrapper I made for accessing my portfolio data easily and effic
 
 ## Installation
 
-<details>
-<summary>Click to show / hide</summary>
-
 ### NPM
 
 ```bash
@@ -33,83 +30,7 @@ npm i @mohammadelhsn/portfolio-api-wrapper
 yarn add @mohammadelhsn/portfolio-api-wrapper
 ```
 
-</details>
-
-## Types
-
-<details>
-<summary>Click to show / hide</summary>
-
-### Opts<T>
-
-```ts
-interface Opts<T> {
-	/** @description Whether the request was successful */
-	success: boolean;
-	/** @description The status of the request */
-	status: number | null;
-	/** @description The message of the status */
-	statusMessage: string | null;
-	/** @description The data */
-	data?: T;
-}
-```
-
-</details>
-
-## API Methods
-
-<details>
-<summary>Click to show / hide</summary>
-
-### `getAssignment(assignmentId?: string, taskId?: string): Promise<Opts<TaskData> | Opts<AssessmentDataType> | Opts<AssessmentDataType[]> | undefined>`
-
-Fetch assignment data.
-
-- **Without parameters:** returns all assignments.
-- **With `assignmentId`:** returns the specific assignment data.
-- **With `assignmentId` and `taskId`:** returns the specific task within that assignment.
-
----
-
-### `getLab(labId?: string, taskId?: string): Promise<any>`
-
-Fetch lab data.
-
-- **Without parameters:** returns all labs.
-- **With `labId`:** returns the specific lab data.
-- **With `labId` and `taskId`:** returns the specific task within that lab.
-
----
-
-### `getExamples(): Promise<any>`
-
-Fetch example data for the course or project.
-
----
-
-### `getPageData(): Promise<any>`
-
-Fetch page-related metadata or content.
-
----
-
-### `getTechData(): any`
-
-Get technology stack data. This method is synchronous.
-
----
-
-### `getTopicsData(): any`
-
-Get course or project topics data. This method is synchronous.
-
-</details>
-
 ## Usage
-
-<details>
-<summary>Click to show / hide</summary>
 
 ```ts
 import API from '@mohammadelhsn/portfolio-api-wrapper'; // adjust path
@@ -164,7 +85,9 @@ async function Test() {
 Test();
 ```
 
-</details>
+## Check out the Docs
+
+[here](https://mohammadelhsn.github.io/Portfolio-API-Wrapper)
 
 ## Status
 
