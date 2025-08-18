@@ -38,17 +38,17 @@ export interface ExampleData {
 }
 
 export interface TaskData {
-	/** @description The name of the task */
+	/** The name of the task */
 	name: string;
-	/** @description The ID of the strong (e.g. t01) */
+	/** The ID of the strong (e.g. t01) */
 	id: string;
-	/** @description The description for the task */
+	/** The description for the task */
 	description: string;
-	/** @description List of goals or objectives */
+	/** List of goals or objectives */
 	objectives: string[];
-	/** @description Example output or result, as a string */
+	/** Example output or result, as a string */
 	sampleOutput: string;
-	/** @description Skills or tech demonstrated, e.g. ["Python", "Multiline Strings"] */
+	/** Skills or tech demonstrated, e.g. ["Python", "Multiline Strings"] */
 	skills: string[];
 }
 
@@ -69,15 +69,15 @@ export interface FunctionPageProps {
 	parent: string;
 }
 export interface AssessmentDataType {
-	/** @description The name of the assessment */
+	/** The name of the assessment */
 	name: string;
-	/** @description The ID of the assessment a01 / l01 */
+	/** The ID of the assessment a01 / l01 */
 	id: string;
-	/** @description The task data for the assessment */
+	/** The task data for the assessment */
 	tasks: TaskData[];
-	/** @description The function data for the assessment  */
+	/** The function data for the assessment  */
 	functions?: FunctionsData[];
-	/** @description The constants data for the assessment  */
+	/** The constants data for the assessment  */
 	constants?: ConstantsData[];
 }
 
@@ -91,13 +91,13 @@ export interface LabsAssignmentsOpts {
 }
 
 export interface Opts<T> {
-	/** @description Whether the request was successful */
+	/** Whether the request was successful */
 	success: boolean;
-	/** @description The status of the request */
+	/** The status of the request */
 	status: number | null;
-	/** @description The message of the status */
+	/** The message of the status */
 	statusMessage: string | null;
-	/** @description The data */
+	/** The data */
 	data?: T;
 }
 
