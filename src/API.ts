@@ -32,17 +32,23 @@ export class API {
 		this.techDataURL = `${this.baseURL}?course=${course}&data=techData`;
 		this.topicsDataURL = `${this.baseURL}?course=${course}&data=topicsData`;
 	}
+	async getAssignment(): Promise<Opts<AssessmentDataType[]>>;
+	async getAssignment(assessNum: string): Promise<Opts<AssessmentDataType>>;
+	async getAssignment(
+		assessNum: string,
+		taskNum: string,
+	): Promise<Opts<TaskData>>;
 	async getAssignment(assessNum?: string, taskNum?: string) {
 		try {
 			if (assessNum !== undefined && taskNum !== undefined) {
 				const res = await axios.get<Opts<TaskData>>(
-					`${this.assignURL}${assessNum}&taskNum=${taskNum}`
+					`${this.assignURL}${assessNum}&taskNum=${taskNum}`,
 				);
 				const data = res.data;
 				return data;
 			} else if (assessNum !== undefined) {
 				const res = await axios.get<Opts<AssessmentDataType>>(
-					`${this.assignURL}${assessNum}`
+					`${this.assignURL}${assessNum}`,
 				);
 				const data = res.data;
 				return data;
@@ -50,26 +56,30 @@ export class API {
 				throw new Error('Task Num must be provided with an assignment number');
 			} else {
 				const res = await axios.get<Opts<AssessmentDataType[]>>(
-					this.assignsURL
+					this.assignsURL,
 				);
 				const data = res.data;
 				return data;
 			}
 		} catch (error) {
 			console.error(error);
+			throw new Error('Failed to fetch assignment(s)/task');
 		}
 	}
+	async getLab(): Promise<Opts<AssessmentDataType[]>>;
+	async getLab(assessNum: string): Promise<Opts<AssessmentDataType>>;
+	async getLab(assessNum: string, taskNum: string): Promise<Opts<TaskData>>;
 	async getLab(assessNum?: string, taskNum?: string) {
 		try {
 			if (assessNum !== undefined && taskNum !== undefined) {
 				const res = await axios.get<Opts<TaskData>>(
-					`${this.labURL}${assessNum}&taskNum=${taskNum}`
+					`${this.labURL}${assessNum}&taskNum=${taskNum}`,
 				);
 				const data = res.data;
 				return data;
 			} else if (assessNum !== undefined) {
 				const res = await axios.get<Opts<AssessmentDataType>>(
-					`${this.labURL}${assessNum}`
+					`${this.labURL}${assessNum}`,
 				);
 				const data = res.data;
 				return data;
@@ -82,6 +92,7 @@ export class API {
 			}
 		} catch (error) {
 			console.error(error);
+			throw new Error('Failed to fetch lab(s)/task');
 		}
 	}
 	async getExamples() {
@@ -91,6 +102,7 @@ export class API {
 			return data;
 		} catch (error) {
 			console.error(error);
+			throw new Error('Failed to fetch examples');
 		}
 	}
 	async getPageData() {
@@ -100,6 +112,7 @@ export class API {
 			return data;
 		} catch (error) {
 			console.error(error);
+			throw new Error('Failed to fetch page data');
 		}
 	}
 	async getTechData() {
@@ -109,6 +122,7 @@ export class API {
 			return data;
 		} catch (error) {
 			console.error(error);
+			throw new Error('Failed to fetch tech data');
 		}
 	}
 	async getTopicsData() {
@@ -118,6 +132,7 @@ export class API {
 			return data;
 		} catch (error) {
 			console.error(error);
+			throw new Error('Failed to fetch topics data');
 		}
 	}
 }
